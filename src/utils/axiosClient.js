@@ -75,7 +75,7 @@ axiosClient.interceptors.response.use(
         // remove accesss token from llocal storage
         removeItem(KEY_ACCESS_TOKEN);
         console.log("refresh api error : " , error) ;
-        window.location.replace("/login", "_self");
+        window.location.replace("/login", "_self") ;
         return Promise.reject(error);
       }
     }
