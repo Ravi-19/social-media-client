@@ -36,11 +36,12 @@ axiosClient.interceptors.response.use(
     const statusCode = data.statusCode;
     const error = data.message;
 
-    if(error === "refresh token is requird from coookies "){
+    if(error === "refresh token is requird from cookies"){
       store.dispatch(showToast({
         type:TOAST_FAILURE , 
         message :error
       })) ; 
+      removeItem(KEY_ACCESS_TOKEN);
       window.location.replace("/login", "_self");
       return Promise.reject(error);
     }
