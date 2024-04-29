@@ -11,7 +11,7 @@ function Home() {
   const feedData = useSelector(state => state.feedReducer.feedData) ;  
   useEffect( ()=> {
       dispatch(getMyInfo()) ; 
-  } , [myProfile ,feedData]) ; 
+  } , []) ; 
   return (
     <>
       <NavBar/>
